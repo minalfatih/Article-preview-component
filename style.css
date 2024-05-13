@@ -1,0 +1,180 @@
+:root {
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+--Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+--Grayish-Blue: hsl(212, 23%, 69%);
+--Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: var(--Light-Grayish-Blue);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-family: "Manrope", sans-serif;
+}
+main {
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 750px;
+  position: relative;
+}
+main .image {
+  width: 300px;
+  height: 320px;
+  border-radius: 10px 0 0 10px;
+  overflow: hidden;
+}
+main .image img {
+  width: 380px;
+  height: 100%;
+}
+main section {
+  width: 450px;
+  padding: 35px;
+  position: relative;
+}
+section > p:first-child {
+  color: var(--Very-Dark-Grayish-Blue);
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 20px;
+}
+section > p {
+  color: var(--Desaturated-Dark-Blue);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+section .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section .info .about {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+section .info .about img {
+  width: 40px;
+  border-radius: 50%;
+}
+section .info .about .info-name p:first-child {
+  color: var(--Very-Dark-Grayish-Blue);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+section .info .about .info-name p:last-child {
+  color: var(--Desaturated-Dark-Blue);
+}
+section .info .share {
+  background-color: var(--Light-Grayish-Blue);
+  width: 35px;
+  height: 35px;
+  font-weight: 500;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+section .info .share.active {
+  background-color: var(--Grayish-Blue);
+}
+section .info .share.active svg path{
+  fill: #fff;
+}
+section .social {
+  background-color: var(--Very-Dark-Grayish-Blue);
+  width: 250px;
+  padding: 25px;
+  border-radius: 10px;
+  position: absolute;
+  right: -70px;
+  bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0px 0px 10px 5px hsla(212,23%,69%,0.351);
+  opacity: 0;
+  transition: .3s linear;
+}
+section .social.active {
+  opacity: 1;
+}
+section .social::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: var(--Very-Dark-Grayish-Blue) transparent transparent transparent;
+}
+section .social p {
+  color: var(--Grayish-Blue);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+section .social .icons {
+  display: flex;
+  gap: 15px;
+}
+.attribution {
+  color: var(--Desaturated-Dark-Blue);
+  font-size: 11px;
+  text-align: center; 
+  position: absolute;
+  bottom: 20px;
+}
+.attribution a { 
+  color: var(--Very-Dark-Grayish-Blue); 
+}
+/*responsive design at mobile*/
+@media (max-width: 500px) {
+  main {
+    flex-direction: column;
+    width: 85%;
+  }
+  main .image {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+  }
+  main .image img {
+    height: 300px;
+  }
+  main section {
+    width: 100%;
+    padding-bottom: 25px;
+  }
+  section > p:first-child {
+    font-size: 16px;
+  }
+  section .info .share {
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+  }
+  section .social {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 10px 10px;
+    justify-content: flex-start;
+  }
+  section .social::after {
+    display: none;
+  }
+}
